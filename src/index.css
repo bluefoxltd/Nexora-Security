@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #050505;
+    --bg-secondary: #0B0B0F;
+    --card-bg: #111114;
+    --accent-red: #FF243D;
+    --accent-red-hover: #D91F36;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A1A1AA;
+    --border-subtle: rgba(255, 255, 255, 0.10);
+    --border-red: rgba(255, 36, 61, 0.4);
+    --glow-red: rgba(255, 36, 61, 0.25);
+  }
+
+  body {
+    background-color: #050505;
+    color: #FFFFFF;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Subtle cyber background grid */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Glassy Card with Luxury Shiny Hover Sheen */
+.glass-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%), #111114;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Shiny reflection light sweep effect across cards on hover */
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.03) 20%, 
+    rgba(255, 255, 255, 0.15) 50%, 
+    rgba(255, 36, 61, 0.2) 70%, 
+    transparent 100%
+  );
+  transform: skewX(-22deg);
+  transition: left 0.85s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 36, 61, 0.6);
+  box-shadow: 
+    0 0 35px rgba(255, 36, 61, 0.2), 
+    0 12px 30px rgba(0, 0, 0, 0.7),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.glass-card:hover::before {
+  left: 140%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF243D;
+}

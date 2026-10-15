@@ -1,0 +1,8 @@
+{
+  "name": "Nexora Security",
+  "description": "Nexora Security provides cybersecurity services, offensive and defensive security training, vulnerability assessment, penetration testing, software development, and digital design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
